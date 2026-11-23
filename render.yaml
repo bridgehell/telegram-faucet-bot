@@ -1,0 +1,10 @@
+# Render Background Worker untuk @Faucet_ETH_bot
+# Di Render: New + -> Background Worker -> pilih repo GitHub ini.
+# Isi Environment Variables di dashboard Render, JANGAN commit ke GitHub:
+# BOT_TOKEN, FAUCET_PRIVATE_KEY, ADMIN_ID, RPC_URL
+services:
+  - type: worker
+    name: faucet-eth-bot
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
